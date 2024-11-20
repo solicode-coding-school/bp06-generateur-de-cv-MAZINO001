@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>cv generetor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <h1>cv generetor</h1>
+  <div class="container">
+    <div class="personal-info">
+      <h2>Personal Information</h2>
+      <div class="personal-info-container">
+        <div class="field">
+          <label for="full-name">Full Name</label>
+          <input type="text" id="full-name" placeholder="Enter your full name" />
+        </div>
+
+        <div class="field">
+          <label for="profile">Profile Picture</label>
+          <input type="file" id="profile" />
+        </div>
+
+        <div class="field">
+          <label for="job">Job Title</label>
+          <input type="text" id="job" placeholder="Enter your job title" />
+        </div>
+
+        <div class="field">
+          <label for="birthday">Birthday</label>
+          <input type="date" id="birthday" />
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="Enter your phone number" />
+        </div>
+
+        <div class="field">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="Enter your email address" />
+        </div>
+
+        <div class="field">
+          <label for="linkedin-profile">LinkedIn Profile</label>
+          <input type="url" id="linkedin-profile" placeholder="Enter your LinkedIn profile URL" />
+        </div>
+
+        <div class="field">
+          <label for="home">Home Address</label>
+          <textarea id="home" placeholder="Enter your home address"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="professional-education">
+      <h2>Professional Education</h2>
+      <div class="education-container">
+        <div class="field">
+          <label for="education-start">Start Date</label>
+          <input type="date" id="education-start" />
+        </div>
+
+        <div class="field">
+          <label for="education-end">End Date</label>
+          <input type="date" id="education-end" />
+        </div>
+
+        <div class="field">
+          <label for="education-role">degree</label>
+          <input type="text" id="education-role" placeholder="Enter your role" />
+        </div>
+
+        <div class="field">
+          <label for="education-company">school Name</label>
+          <input type="text" id="education-company" placeholder="Enter company name" />
+        </div>
+      </div>
+      <button>Add Education</button>
+    </div>
+    <div class="professional-experience">
+      <h2>Professional Experience</h2>
+
+      <div class="experience-container">
+        <div class="field">
+          <label for="experience-start">Start Date</label>
+          <input type="date" id="experience-start" />
+        </div>
+
+        <div class="field">
+          <label for="experience-end">End Date</label>
+          <input type="date" id="experience-end" />
+        </div>
+
+        <div class="field">
+          <label for="job-title">Job Title</label>
+          <input type="text" id="job-title" placeholder="Enter your job title" />
+        </div>
+
+        <div class="field">
+          <label for="company-name">Company Name</label>
+          <input type="text" id="company-name" placeholder="Enter company name" />
+        </div>
+      </div>
+      <button>Add Experience</button>
+    </div>
+
+    <div class="all_skills">
+      <div class="skills">
+        <h2>Skills</h2>
+        <div class="skills-container">
+          <p>HTML</p>
+          <p>CSS</p>
+          <p>JavaScript</p>
+          <p>react</p>
+        </div>
+        <input type="text" id="new-skill" placeholder="add new skill" />
+        <button>Add skill</button>
+      </div>
+      <div class="soft_skills">
+        <h2>Soft Skills</h2>
+        <div class="soft_skills-container">
+          <p>communication</p>
+          <p>communication</p>
+          <p>communication</p>
+          <p>communication</p>
+        </div>
+        <input type="text" id="new-soft_skills" placeholder="add new skill" />
+        <button>Add skill</button>
+      </div>
+    </div>
+
+    <div class="hobbies_languages">
+      <div class="languages">
+        <h2>Languages</h2>
+        <div class="languages-container">
+          <div class="lang">
+            <p>English</p>
+            <p>B1</p>
+          </div>
+          <div class="lang">
+            <p>French</p>
+            <p>A1</p>
+          </div>
+          <div class="lang">
+            <p>Arabic</p>
+            <p>B2</p>
+          </div>
+        </div>
+        <div class="languages_levels">
+          <input type="text" id="new-language" placeholder="add new language" />
+          <select name="lang_level" id="lang_level">
+            <option value="A1">A1</option>
+            <option value="A2">A2</option>
+            <option value="B1">B1</option>
+            <option value="B2">B2</option>
+          </select>
+        </div>
+        <button>Add language</button>
+      </div>
+
+      <div class="hobbies">
+        <h2>Hobbies</h2>
+        <div class="hobbies-container">
+          <p>Reading</p>
+          <p>Music</p>
+          <p>Travel</p>
+        </div>
+        <input type="text" id="new-hobby" placeholder="add new hobby" />
+        <button>Add hobby</button>
+      </div>
+    </div>
+
+    <button class="generate">Generate My CV</button>
+  </div>
+  <div class="cv">
+    <div class="left">
+      <img src="./img/profile.jpg" alt="" />
+      <div class="cv_hobbies">
+        <h2>hobbies</h2>
+        <div class="cv_hobbies_container">
+          <span>Reading</span>
+          <span>Music</span>
+          <span>Travel</span>
+        </div>
+      </div>
+      <div class="cv_skills">
+        <h2>skills</h2>
+        <div class="cv_skills_container">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+        </div>
+      </div>
+      <div class="cv_soft_skills">
+        <h2>soft Skills</h2>
+        <div class="cv_soft_skills_container">
+          <span>communication</span>
+          <span>communication</span>
+          <span>communication</span>
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="top">
+        <h1>jhone doe</h1>
+        <h2>front-end developer</h2>
+        <p>jhonedoe001@gmail.com</p>
+        <p>www.linkdIn.com/user001</p>
+        <p>45 some Street / somewhere /usa</p>
+        <p>20</p>
+        <p>0612345678</p>
+      </div>
+      <div class="bottom">
+        <div class="cv_education">
+          <h2>Professional Education</h2>
+          <div class="cv_education_container">
+            <div>2020 - 2021</div>
+            <div>unknown degree</div>
+            <div>unknown School</div>
+          </div>
+          <div class="cv_education_container">
+            <div>2020 - 2021</div>
+            <div>unknown degree</div>
+            <div>unknown School</div>
+          </div>
+        </div>
+        <div class="cv_experience">
+          <h2>Professional Experience</h2>
+          <div class="cv_experience_container">
+            <div>2020 - 2021</div>
+            <div>unknown role</div>
+            <div>unknown company</div>
+          </div>
+          <div class="cv_experience_container">
+            <div>2020 - 2021</div>
+            <div>unknown role</div>
+            <div>unknown company</div>
+          </div>
+        </div>
+        <div class="cv_languages">
+          <h2>languages</h2>
+          <div class="cv_languages_container">
+            <div class="cv_lang">
+              <p>frensh</p>
+              <p>biginner</p>
+            </div>
+            <div class="cv_lang">
+              <p>english</p>
+              <p>biginner</p>
+            </div>
+            <div class="cv_lang">
+              <p>arabic</p>
+              <p>biginner</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- *************************** -->
+
+  <script src="script.js"></script>
+  <script src="resume.js"></script>
+</body>
+
+</html>
