@@ -1,6 +1,8 @@
 const cvContainer = document.querySelector(".cv");
 const infoContainer = document.querySelector(".container");
 const downloadBtn = document.querySelector("#downloadPDF");
+const resetBtn = document.querySelector("#reset");
+const ActionButtons = document.querySelector(".buttons");
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const phoneRegex = /^(\+212|0)([ \-]?[5-7][0-9]{8})$/;
 const linkdInRegex = /^https?:\/\/(www\.)?linkedin\.com\/in\/[a-zA-Z0-9-]+\/?$/;
@@ -8,7 +10,7 @@ const linkdInRegex = /^https?:\/\/(www\.)?linkedin\.com\/in\/[a-zA-Z0-9-]+\/?$/;
 function switchToCv() {
   infoContainer.style.display = "none";
   cvContainer.style.display = "flex";
-  downloadBtn.style.display = "flex";
+  ActionButtons.style.display = "flex";
 }
 
 class Resume {
@@ -149,44 +151,44 @@ generatebtn.addEventListener("click", () => {
 
 
   // the validation functions
-  // if (!emptyInputValidation([fullName, profileImg, jobTitle, birthday, address,
-  // ])) {
-  //   alert("Please fill all the personal information inputs");
-  //   return;
-  // }
-  // if (!emptyArrayValidation([
-  //   skills,
-  //   softSkills,
-  //   languages,
-  //   hobbies,
-  // ])) {
-  //   alert("Please add items into the required inputs");
-  //   return;
-  // }
+  if (!emptyInputValidation([fullName, profileImg, jobTitle, birthday, address,
+  ])) {
+    alert("Please fill all the personal information inputs");
+    return;
+  }
+  if (!emptyArrayValidation([
+    skills,
+    softSkills,
+    languages,
+    hobbies,
+  ])) {
+    alert("Please add items into the required inputs");
+    return;
+  }
 
-  // if (!EmailValidation(email)) {
-  //   alert("Please enter a valid email address.");
-  //   return;
-  // }
+  if (!EmailValidation(email)) {
+    alert("Please enter a valid email address.");
+    return;
+  }
 
-  // if (!linkdInValidation(linkedin)) {
-  //   alert("Please enter a valid LinkedIn profile URL.");
-  //   return;
-  // }
+  if (!linkdInValidation(linkedin)) {
+    alert("Please enter a valid LinkedIn profile URL.");
+    return;
+  }
 
-  // if (!PhoneValidation(phoneNumber)) {
-  //   alert("Please enter a valid phone number.");
-  //   return;
-  // }
+  if (!PhoneValidation(phoneNumber)) {
+    alert("Please enter a valid phone number.");
+    return;
+  }
 
-  // if (!educationValidation(education)) {
-  //   alert("Please fill the education section");
-  //   return;
-  // }
-  // if (!experienceValidation(experience)) {
-  //   alert("Please  fill the experience section.");
-  //   return;
-  // }
+  if (!educationValidation(education)) {
+    alert("Please fill the education section");
+    return;
+  }
+  if (!experienceValidation(experience)) {
+    alert("Please  fill the experience section.");
+    return;
+  }
 
   // if all the validations passes display the cv
   switchToCv()
@@ -208,7 +210,7 @@ generatebtn.addEventListener("click", () => {
     languages
   );
   // saving in  localStoraage
-  // localStorage.setItem("resumeData", JSON.stringify(Data));
+  localStorage.setItem("resumeData", JSON.stringify(Data));
   // adding the data in the acutal resume
   let resumaData = JSON.parse(localStorage.getItem("resumeData"));
   const cv_hobbies = document.querySelector(".cv_hobbies_container");
@@ -240,7 +242,7 @@ generatebtn.addEventListener("click", () => {
   cv_email.innerText = resumaData.email;
   cv_linkedin.innerText = resumaData.linkIn;
   cv_address.innerText = resumaData.home;
-  cv_age.innerText = currentDate.getFullYear() - year;
+  cv_age.innerText = `${currentDate.getFullYear() - year} years old`;
   cv_phone_number.innerText = resumaData.phone;
 
   resumaData.hobbies.forEach((hobby) => {
@@ -313,24 +315,6 @@ fileInput.addEventListener('change', function (event) {
   }
 });
 
-
-
-
-// document.getElementById('downloadPDF').addEventListener('click', async () => {
-//   const { jsPDF } = window.jspdf; // Ensure jsPDF is loaded properly
-
-//   const content = document.querySelector('.cv'); // Adjust selector as needed
-
-//   // Render HTML content to PDF
-//   const pdf = new jsPDF();
-//   pdf.html(content, {
-//     callback: (doc) => {
-//       doc.save('my-cv.pdf');
-//     },
-//   });
-// });
-
-
 window.onload = function () {
   document.getElementById('downloadPDF').addEventListener("click", () => {
     const content = document.querySelector('.cv');
@@ -345,3 +329,6 @@ window.onload = function () {
     html2pdf().set(opt).from(content).save()
   })
 }
+resetBtn.addEventListener("click", () => {
+  location.reload()
+})
