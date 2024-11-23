@@ -60,7 +60,7 @@ function PhoneValidation(phoneNumber) {
 
 function emptyInputValidation(inputs) {
   for (let input of inputs) {
-    if (input === '' || null) {
+    if (input === '') {
       return false;
     }
   }
@@ -147,46 +147,46 @@ generatebtn.addEventListener("click", () => {
     document.querySelectorAll(".hobbies-container p")
   ).map((hobby) => hobby.textContent);
 
-  console.log(profileImg)
+
   // the validation functions
-  if (!emptyInputValidation([fullName, profileImg, jobTitle, birthday, address,
-  ])) {
-    alert("Please fill all the personal information inputs");
-    return;
-  }
-  if (!emptyArrayValidation([
-    skills,
-    softSkills,
-    languages,
-    hobbies,
-  ])) {
-    alert("Please add items into the required inputs");
-    return;
-  }
+  // if (!emptyInputValidation([fullName, profileImg, jobTitle, birthday, address,
+  // ])) {
+  //   alert("Please fill all the personal information inputs");
+  //   return;
+  // }
+  // if (!emptyArrayValidation([
+  //   skills,
+  //   softSkills,
+  //   languages,
+  //   hobbies,
+  // ])) {
+  //   alert("Please add items into the required inputs");
+  //   return;
+  // }
 
-  if (!EmailValidation(email)) {
-    alert("Please enter a valid email address.");
-    return;
-  }
+  // if (!EmailValidation(email)) {
+  //   alert("Please enter a valid email address.");
+  //   return;
+  // }
 
-  if (!linkdInValidation(linkedin)) {
-    alert("Please enter a valid LinkedIn profile URL.");
-    return;
-  }
+  // if (!linkdInValidation(linkedin)) {
+  //   alert("Please enter a valid LinkedIn profile URL.");
+  //   return;
+  // }
 
-  if (!PhoneValidation(phoneNumber)) {
-    alert("Please enter a valid phone number.");
-    return;
-  }
+  // if (!PhoneValidation(phoneNumber)) {
+  //   alert("Please enter a valid phone number.");
+  //   return;
+  // }
 
-  if (!educationValidation(education)) {
-    alert("Please fill the education section");
-    return;
-  }
-  if (!experienceValidation(experience)) {
-    alert("Please  fill the experience section.");
-    return;
-  }
+  // if (!educationValidation(education)) {
+  //   alert("Please fill the education section");
+  //   return;
+  // }
+  // if (!experienceValidation(experience)) {
+  //   alert("Please  fill the experience section.");
+  //   return;
+  // }
 
   // if all the validations passes display the cv
   switchToCv()
@@ -208,7 +208,7 @@ generatebtn.addEventListener("click", () => {
     languages
   );
   // saving in  localStoraage
-  localStorage.setItem("resumeData", JSON.stringify(Data));
+  // localStorage.setItem("resumeData", JSON.stringify(Data));
   // adding the data in the acutal resume
   let resumaData = JSON.parse(localStorage.getItem("resumeData"));
   const cv_hobbies = document.querySelector(".cv_hobbies_container");
@@ -274,7 +274,9 @@ generatebtn.addEventListener("click", () => {
     cv_education.innerHTML += `
       <div class="cv_education_container">
         <div>${education.startDate.split("-")[0]} - ${education.endDate.split("-")[0]}</div>
+        |
         <div>${education.degree}</div>
+        |
         <div>${education.schoolName}</div>
       </div>
     `;
@@ -284,7 +286,9 @@ generatebtn.addEventListener("click", () => {
     cv_experience.innerHTML += `
       <div class="cv_experience_container">
         <div>${experience.startDate.split("-")[0]} - ${experience.endDate.split("-")[0]}</div>
+        |
         <div>${experience.jobTitle}</div>
+        |
         <div>${experience.companyName}</div>
       </div>
     `;
@@ -308,6 +312,24 @@ fileInput.addEventListener('change', function (event) {
     preview.src = '';
   }
 });
+
+
+
+
+// document.getElementById('downloadPDF').addEventListener('click', async () => {
+//   const { jsPDF } = window.jspdf; // Ensure jsPDF is loaded properly
+
+//   const content = document.querySelector('.cv'); // Adjust selector as needed
+
+//   // Render HTML content to PDF
+//   const pdf = new jsPDF();
+//   pdf.html(content, {
+//     callback: (doc) => {
+//       doc.save('my-cv.pdf');
+//     },
+//   });
+// });
+
 
 window.onload = function () {
   document.getElementById('downloadPDF').addEventListener("click", () => {
