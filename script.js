@@ -1,5 +1,3 @@
-const cvContainer = document.querySelector(".cv");
-const infoContainer = document.querySelector(".container");
 const generatebtn = document.querySelector(".generate");
 const professionalEducation = document.querySelector(".professional-education");
 const professionalEducationBtn = document.querySelector(
@@ -29,10 +27,6 @@ const languageInput = document.querySelector("#new-language");
 const languageLevel = document.querySelector("#lang_level");
 const languageContainer = document.querySelector(".languages-container");
 
-generatebtn.addEventListener("click", () => {
-  infoContainer.style.display = "none";
-  cvContainer.style.display = "flex";
-});
 
 professionalEducationBtn.addEventListener("click", () => {
   let newEducation = document.createElement("div");
@@ -68,7 +62,6 @@ professionalEducationBtn.addEventListener("click", () => {
   `;
   professionalEducation.insertBefore(newEducation, professionalEducationBtn);
 });
-
 professionalExperienceBtn.addEventListener("click", () => {
   let newExperince = document.createElement("div");
   newExperince.classList.add("experience-container");
@@ -109,6 +102,7 @@ skillsBtn.addEventListener("click", () => {
     const newSkill = document.createElement("p");
     newSkill.innerText = skillsInput.value;
     skillsContainer.appendChild(newSkill);
+    skillsInput.value = ""
   }
 });
 
@@ -118,6 +112,7 @@ softSkillsBtn.addEventListener("click", () => {
     const newSoftSkill = document.createElement("p");
     newSoftSkill.innerText = softSkillsInput.value;
     softSkillsContainer.appendChild(newSoftSkill);
+    softSkillsInput.value = ""
   }
 });
 
@@ -126,6 +121,8 @@ hobbiesBtn.addEventListener("click", () => {
     const newhobby = document.createElement("p");
     newhobby.innerText = hobbiesInput.value;
     hobbiesContainer.appendChild(newhobby);
+    hobbiesInput.value = ""
+
   }
 });
 
@@ -138,6 +135,8 @@ languageBtn.addEventListener("click", () => {
     <p>${languageLevel.value}</p>
     `;
     languageContainer.appendChild(newLanguage);
+    languageInput.value = ""
   }
 });
+
 

@@ -7,7 +7,7 @@
 body {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex;
   flex-direction: column;
   background-color: #fff;
   color: #000;
@@ -146,6 +146,7 @@ label {
   gap: 10px;
   flex-wrap: wrap;
 }
+
 .skills-container p {
   width: 120px;
   height: 40px;
@@ -157,6 +158,7 @@ label {
   align-items: center;
   justify-content: center;
 }
+
 /* soft skills */
 .soft_skills {
   width: 100%;
@@ -210,6 +212,7 @@ label {
   width: 100%;
   margin-bottom: 10px;
 }
+
 .languages-container .lang {
   display: flex;
   align-items: center;
@@ -229,9 +232,11 @@ label {
   gap: 10px;
   width: 100%;
 }
+
 .languages_levels input {
   width: 70%;
 }
+
 .languages_levels select {
   width: 30%;
   height: 40px;
@@ -263,6 +268,7 @@ label {
   gap: 10px;
   flex-wrap: wrap;
 }
+
 .hobbies-container p {
   width: 120px;
   height: 40px;
@@ -283,6 +289,7 @@ label {
   justify-content: space-between;
   gap: 20px;
 }
+
 .all_skills {
   width: 100%;
   display: flex;
@@ -293,14 +300,19 @@ label {
 
 /* *********************************************************************************** */
 /* cv styling */
+
+
 .cv {
-  width: 900px;
-  height: 1000px;
+  width: 8.5in;
+  height: 10in;
+  page-break-inside: avoid;
   background-color: #e8d9d9;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   display: none;
   color: #000;
 }
+
+
 .cv .left {
   width: 25%;
   height: 100%;
@@ -310,11 +322,12 @@ label {
   padding: 10px;
   border-right: 1px solid #000;
 }
+
 .cv .left h2 {
   margin: 10px 0;
 }
 
-.cv .left > img {
+.cv .left>img {
   width: 170px;
   height: 170px;
   border-radius: 50%;
@@ -339,6 +352,7 @@ label {
   text-align: center;
   padding: 10px;
 }
+
 .cv .right .bottom {
   display: flex;
   flex-direction: column;
@@ -352,14 +366,21 @@ label {
   gap: 10px;
   margin-bottom: 10px;
 }
+
 .cv .right .bottom .cv_experience .cv_experience_container {
   display: flex;
   gap: 10px;
   margin-bottom: 10px;
 }
+
 .cv .right .bottom .cv_languages .cv_lang {
   width: 20%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+#downloadPDF {
+  display: none;
+  margin-bottom: 10px;
 }
